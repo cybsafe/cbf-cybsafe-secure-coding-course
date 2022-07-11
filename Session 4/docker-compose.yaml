@@ -2,11 +2,15 @@ version: "2.2"
 
 services:
   web-default:
-    image: nginx:1.20
+    build:
+      context: .
+      target: base
     ports:
       - "9081:80"
 
   web-secure:
-    build: .
+    build:
+      context: .
+      target: secure
     ports:
       - "9443:443"
