@@ -20,7 +20,7 @@ show-headers:
 	@echo "$$(tput setaf 6)$$(tput setab 0)═══════════════════════════════$$(tput sgr 0)"
 	@curl -I http://localhost:9081
 	@echo "$$(tput setaf 6)$$(tput setab 0)═════════════════════════════════$$(tput sgr 0)"
-	@echo "$$(tput setaf 6)$$(tput setab 0)  👍    Base secure cofig     👍 $$(tput sgr 0)"
+	@echo "$$(tput setaf 6)$$(tput setab 0)  👍    Base secure config     👍 $$(tput sgr 0)"
 	@echo "$$(tput setaf 6)$$(tput setab 0)═════════════════════════════════$$(tput sgr 0)"
 	@curl -k -I https://localhost:9443
 
