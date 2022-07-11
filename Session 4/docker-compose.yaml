@@ -1,0 +1,12 @@
+version: "2.2"
+
+services:
+  web-default:
+    image: nginx:1.20
+    ports:
+      - "9081:80"
+
+  web-secure:
+    build: .
+    ports:
+      - "9443:443"
