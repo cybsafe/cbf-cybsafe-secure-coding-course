@@ -1,0 +1,16 @@
+version: "2.2"
+
+services:
+  web-default:
+    build:
+      context: .
+      target: base
+    ports:
+      - "9081:80"
+
+  web-secure:
+    build:
+      context: .
+      target: secure
+    ports:
+      - "9443:443"
