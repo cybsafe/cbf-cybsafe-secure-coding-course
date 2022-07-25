@@ -5,7 +5,7 @@ clean-build:
 .PHONY: start
 start:
 	docker compose up -d
-	sleep 10
+	sleep 5
 	open http://localhost:4001
 
 .PHONY: stop
