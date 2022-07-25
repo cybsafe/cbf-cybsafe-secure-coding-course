@@ -11,7 +11,7 @@ services:
     ports:
       - "4000:4000"
     networks:
-      - sqlinject
+      - xss
 
   client:
     platform: linux/amd64 
@@ -22,9 +22,9 @@ services:
     ports:
       - "4001:4001"
     networks:
-      - sqlinject
+      - xss
     depends_on:
       - server
 
 networks:
-  sqlinject:
+  xss:
