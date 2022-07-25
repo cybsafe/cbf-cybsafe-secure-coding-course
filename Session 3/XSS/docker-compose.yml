@@ -1,0 +1,30 @@
+version: "2.2"
+
+services:
+
+  server:
+    platform: linux/amd64 
+    build:
+      context: .
+      target: server
+    command: "npm run start"
+    ports:
+      - "4000:4000"
+    networks:
+      - sqlinject
+
+  client:
+    platform: linux/amd64 
+    build:
+      context: .
+      target: client
+    command: "npm run dev"
+    ports:
+      - "4001:4001"
+    networks:
+      - sqlinject
+    depends_on:
+      - server
+
+networks:
+  sqlinject:
