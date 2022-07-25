@@ -15,3 +15,9 @@ To start the client, run `npm install` followed by `npm run dev`
 Run `docker compose up -d` 
 
 then navigate to http://localhost:8081/
+
+## Makefile (Easiest option)
+
+Run `make start`
+
+To stop everything run `make stop`
