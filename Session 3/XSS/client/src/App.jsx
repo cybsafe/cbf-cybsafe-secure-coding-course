@@ -5,6 +5,7 @@ function App() {
   const [data, setData] = useState(null);
   // Get data on initial page load
   useEffect(() => {
+    window.localStorage.setItem("secret", "cybsafe");
     async function getData() {
       const data = await fetch("http://localhost:4000", {
         method: "GET",
@@ -26,13 +27,18 @@ function App() {
     setData(json);
     event.preventDefault();
   }
-  // Set a secret in local storage
-  function setSecret() {
-    window.localStorage.setItem("secret", "cybsafe");
-  }
 
   return (
-    <div>
+    <main>
+      <h1>XSS</h1>
+      <p>
+        Each piece of text inputted into the text box will be shown in a list
+      </p>
+      <p>
+        A secret has been set in localStorage under the key `secret` which can
+        be exposed using cross site scripting
+      </p>
+      <p>Create an input that alerts the secret</p>
       <input
         type="text"
         value={message}
@@ -48,8 +54,7 @@ function App() {
             />
           ))}
       </ul>
-      <button onClick={setSecret}>Set Secret</button>
-    </div>
+    </main>
   );
 }
 
