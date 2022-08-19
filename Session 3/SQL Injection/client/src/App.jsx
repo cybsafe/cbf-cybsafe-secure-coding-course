@@ -18,13 +18,19 @@ function App() {
     setForm(event.target.value);
   }
   return (
-    <div>
+    <main>
+      <h1>SQL Injection</h1>
+      <p>
+        This form will make an SQL query, it is designed for numbers between 1
+        and 10 and will return text for each number
+      </p>
+      <p>Try to create an input that instead returns all 10 pieces of text</p>
       <input type="text" value={form} onChange={handleChange} />
       <button onClick={handleSubmit}>Submit</button>
       <ul>
         {data && data.data.map((item) => <li key={item.info}>{item.info}</li>)}
       </ul>
-    </div>
+    </main>
   );
 }
 
